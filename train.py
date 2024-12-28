@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
@@ -25,10 +25,10 @@ preprocessor = ColumnTransformer(
     ])
 
 # Définir le nom du modèle
-model_name = "RandomForestClassifier"
+model_name = "GradientBoostingClassifier"
 pipeline = Pipeline([
     ('preprocessor', preprocessor),
-    ('classifier', RandomForestClassifier(random_state=42))
+    ('classifier', GradientBoostingClassifier(random_state=42))
 ])
 
 # Preparing data for training

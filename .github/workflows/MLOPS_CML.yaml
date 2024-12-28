@@ -24,8 +24,8 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## Model Training Results" >> report.md
-          echo "Model: RandomForestClassifier" >> report.md
+          echo "Model: GradientBoostingClassifier" >> report.md
           echo "\`\`\`" >> report.md
-          ls metrics_RandomForestClassifier_*.json | xargs cat >> report.md
+          ls metrics_GradientBoostingClassifier_*.json | xargs cat >> report.md
           echo "\`\`\`" >> report.md
           cml comment create report.md
